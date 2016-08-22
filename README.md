@@ -62,6 +62,14 @@ enp._decrypt(token, userId, (err, timestamp) => {
 });
 ```
 
+You can control the security/performance tradeoff by tweaking the `iterations` property of your EasyNoPassword instance.  The default setting is 1000, which takes 1-2 ms of CPU time.  Increasing the setting will make tokens harder to crack at the expense of costing more CPU cycles.  Note that the most expensive part of the computation is performed in the thread pool and won't block the main event thread (which is why all of the APIs are asynchronous).
+
+```javascript
+// Increase the number of iterations to 500000 (~500 ms of CPU time)
+enp.iterations = 500000;
+```
+
+
 ## Contributing
 
 Contributions are welcome.  Before submitting a pull request, please check for errors by running the tests and the JavaScript linter.
