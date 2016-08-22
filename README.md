@@ -1,9 +1,11 @@
-Easy No Password and 2FA
-========================
+Easy No Password (and Two-Factor Authentication)
+================================================
 
-The increasing scrutiny over weak passwords has been leading more and more developers to opt for passwordless login flows and/or two-factor authentication.  This usually involves emailing or texting a unique token to a user, and giving them a certain amount of time to enter that token into the login screen.  Most libraries on *npm* currently offering this functionality require that the tokens be stored in a database somewhere.
+The increasing scrutiny over weak passwords has been leading more and more developers to opt for passwordless login flows and two-factor authentication.
 
-This library is unique because it uses cryptography techniques to generate timestamped tokens, eliminating the need for a database.  The tokens themselves contain all the information needed to ensure that they were generated within a certain window of time, like the last 15 minutes.
+Passwordless login and two-factor authentication usually involve emailing or texting a unique token to a user, and giving them a certain amount of time to enter that token into the login screen.
+
+This library is unique because it uses cryptography techniques to generate timestamped tokens, eliminating the need for a database to store tokens.  The tokens themselves contain all the information needed to check for their validity.
 
 ## Installation
 
@@ -41,14 +43,14 @@ The tokens are 64-bit values encoded into 10-11 ASCII characters.  Tokens are ge
 
 To customize the size of the token validity window, set a custom number of millisconds in the constructor:
 
-```
+```javascript
 // Set tokens to be valid for 24 hours
 const enp = require("easy-no-password")("secret", 24*3600*1000);
 ```
 
 To directly extract the timestamp out of a token or generate a token from a custom timestamp, use the following methods.  Note that these methods are internal and may be changed in a future update.
 
-```
+```javascript
 // Generate a token with custom timestamp:
 enp._encrypt(timestamp, userId, (err, token) => {
 	// do stuff with token
@@ -70,7 +72,7 @@ Contributions are welcome.  Before submitting a pull request, please check for e
 
 ## MIT License
 
-Copyright (c) 2016 Shane Carr and others
+Copyright (c) 2016 Shane Carr and others.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
