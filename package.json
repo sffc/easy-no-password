@@ -1,0 +1,29 @@
+{
+  "name": "easy-no-password",
+  "version": "1.0.0",
+  "description": "Generates secure, timestamped tokens for password-less authentication without a database backend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test"
+  },
+  "keywords": [
+    "password",
+    "passwordless",
+    "encryption",
+    "timestamp",
+    "authentication",
+    "two",
+    "factor"
+  ],
+  "author": "Shane Carr",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.0.1",
+    "cuint": "^0.2.1",
+    "int64-native": "^0.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.3.1",
+    "mocha": "^3.0.2"
+  }
+}
