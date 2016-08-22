@@ -20,8 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "async": "^2.0.1",
-    "cuint": "^0.2.1",
-    "int64-native": "^0.4.0"
+    "cuint": "^0.2.1"
   },
   "devDependencies": {
     "eslint": "^3.3.1",
