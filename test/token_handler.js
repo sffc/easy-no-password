@@ -142,7 +142,7 @@ describe("token_handler.js", () => {
 					enp.isValid(token, username, (_, isValid) => {
 						if (isValid) {
 							// Very rare occurence
-							console.error("Random token passed as valid:", secret, username, token);
+							console.error("Random token passed as valid:", secret, username, token);  // eslint-disable-line no-console
 						}
 						_next(null, isValid ? memo + 1 : memo);
 					});
