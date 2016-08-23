@@ -1,6 +1,6 @@
 {
   "name": "easy-no-password",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Generates secure, timestamped tokens for passwordless authentication without a database backend.",
   "main": "index.js",
   "scripts": {

@@ -7,6 +7,8 @@ Passwordless login and two-factor authentication usually involve emailing or tex
 
 This library is unique because it uses cryptography techniques to generate timestamped tokens, eliminating the need for a database to store tokens.  The tokens themselves contain all the information needed to check for their validity.
 
+In addition to the basic API where you can directly generate and check tokens, there is also a [Passport Strategy](http://passportjs.org) API available for easy integration with other forms of authentication.
+
 ## Installation
 
     $ npm install --save easy-no-password
@@ -35,6 +37,50 @@ enp.isValid(token, userId, (err, isValid) => {
 		console.log("Someone is trying to hack into user's account!", userId);
 	}
 });
+```
+
+## Using with Passport
+
+The following example uses the route */auth/tok* for handling Easy No Password requests.  To request a token, the user can POST to that URL with their email address.  To verify a token, the user can GET to that URL with their email address and their token.  In between, the user can be sent an email with the appropriate verification link.
+
+```javascript
+const EasyNoPassword = require("easy-no-password");
+
+// Example Express configuration:
+app
+	.use(BodyParser.urlencoded())
+	.post("/auth/tok", Passport.authenticate("easy"), function(req, res) {
+		// The user has been emailed.
+		// Possible flow: redirect the user to a page with a form where they can
+		// enter the token if they can't click the link from their email.
+	})
+	.get("/auth/tok", Passport.authenticate("easy", {
+		successRedirect: "/",
+		failureRedirect: "/oops.html"
+	}));
+
+// Example Passport configuration:
+passport.use(new (EasyNoPassword.Strategy)({
+		secret: "YOUR_LONG_SECURE_ENCRYPTION_SECRET"
+	},
+	function (req) {
+		// Check if we are in "stage 1" (requesting a token) or "stage 2" (verifying a token)
+		if (req.body && req.body.email) {
+			return { stage: 1, username: req.body.email };
+		} else if (req.query && req.query.email && req.query.token) {
+			return { stage: 2, username: req.query.email, token: req.query.token };
+		} else {
+			return null;
+		}
+	},
+	function (email, token, done) {
+		var safeEmail = encodeURIComponent(email);
+		var url = "https://my.domain.com/auth/tok?email=" + safeEmail + "&token=" + token;
+		// Send the link to user via email.  Call done() when finished.
+	},
+	function (email, done) {
+		// User is authenticated!  Call your findOrCreateUser function here.
+	}));
 ```
 
 ## More Details
