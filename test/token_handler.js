@@ -120,7 +120,7 @@ describe("token_handler.js", () => {
 							}],
 							"check": ["decrypt", "isValid", (results, __next) => {
 								assert.equal(results.decrypt, timestamp);
-								// assert.equal(results.isValid, isValid);
+								assert.equal(results.isValid, isValid);
 								__next(null);
 							}]
 						}, _next);
