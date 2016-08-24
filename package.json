@@ -1,6 +1,6 @@
 {
   "name": "easy-no-password",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Generates secure, timestamped tokens for passwordless authentication without a database backend.",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "async": "^2.0.1",
+    "babel-polyfill": "^6.13.0",
     "cuint": "^0.2.1",
     "passport-strategy": "^1.0.0"
   },
