@@ -1,7 +1,5 @@
-"use strict";
-
-const EasyNoPassword = require("./lib/token_handler");
-const EasyStrategy = require("./lib/strategy");
+var EasyNoPassword = require("./build/token_handler");
+var EasyStrategy = require("./build/strategy");
 
 function construct(secret, maxTokenAge) {
 	return new EasyNoPassword(secret, maxTokenAge);
