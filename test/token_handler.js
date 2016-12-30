@@ -12,18 +12,22 @@ const CURRENT_TIMESTAMP = new Date().getTime();
 const TOKEN_CREATION_TEST_CASES = [
 	// secret, [ username, timestamp, token ]
 	[ "Gf6y0SWRiiiTj5x2", [
-		[ "bob", new Date(2016, 8, 21, 0, 0, 0, 0).getTime(), "9Hndv8i7uR7" ],
-		[ "bob", new Date(2016, 8, 21, 0, 0, 0, 1).getTime(), "abBw4T5cIz5" ],
-		[ "bob", new Date(2050, 1, 2, 3, 4, 5, 0).getTime(), "8IKE37asE06" ],
-		[ "alice", new Date(2016, 8, 21, 0, 0, 0, 0).getTime(), "iMsQT7mkLPp" ],
-		[ "alice", new Date(2050, 1, 2, 3, 4, 5, 0).getTime(), "2a6esgMRQZn" ],
+		[ "bob", new Date(Date.UTC(2016, 8, 21, 0, 0, 0, 0)).getTime(), "46GmWoaOb7J" ],
+		[ "bob", new Date(Date.UTC(2016, 8, 21, 0, 0, 0, 1)).getTime(), "dUcEZowiWM3" ],
+		[ "bob", new Date(Date.UTC(2050, 1, 2, 3, 4, 5, 0)).getTime(), "j0VGVYxQY6D" ],
+		[ "alice", new Date(Date.UTC(2016, 8, 21, 0, 0, 0, 0)).getTime(), "7y9YoDy1uvF" ],
+		[ "alice", new Date(Date.UTC(2050, 1, 2, 3, 4, 5, 0)).getTime(), "czbPzOQ9OJF" ],
+		[ "日本", new Date(Date.UTC(2017, 0, 1, 0, 0, 0, 0)).getTime(), "lNvpdDMaoRM" ],
+		[ "中国", new Date(Date.UTC(2017, 0, 1, 0, 0, 0, 0)).getTime(), "2owiBw1Rira" ],
 	]],
 	[ "3cCVBl232kQ3xtw5", [
-		[ "bob", new Date(2016, 8, 21, 0, 0, 0, 0).getTime(), "f3TSzTkytL8" ],
-		[ "bob", new Date(2016, 8, 21, 0, 0, 0, 1).getTime(), "2u7Ev4XIzHT" ],
-		[ "bob", new Date(2050, 1, 2, 3, 4, 5, 0).getTime(), "IEvmNd0N9f" ],
-		[ "alice", new Date(2016, 8, 21, 0, 0, 0, 0).getTime(), "cNJAmVpathx" ],
-		[ "alice", new Date(2050, 1, 2, 3, 4, 5, 0).getTime(), "6R3s1zqKNxJ" ],
+		[ "bob", new Date(Date.UTC(2016, 8, 21, 0, 0, 0, 0)).getTime(), "lGXE4jFLwtP" ],
+		[ "bob", new Date(Date.UTC(2016, 8, 21, 0, 0, 0, 1)).getTime(), "9fRORLwpEw5" ],
+		[ "bob", new Date(Date.UTC(2050, 1, 2, 3, 4, 5, 0)).getTime(), "gTR7AbSJFu6" ],
+		[ "alice", new Date(Date.UTC(2016, 8, 21, 0, 0, 0, 0)).getTime(), "60in3qeoSrx" ],
+		[ "alice", new Date(Date.UTC(2050, 1, 2, 3, 4, 5, 0)).getTime(), "4HxIgyibsDA" ],
+		[ "日本", new Date(Date.UTC(2017, 0, 1, 0, 0, 0, 0)).getTime(), "kVO0qRiRLxw" ],
+		[ "中国", new Date(Date.UTC(2017, 0, 1, 0, 0, 0, 0)).getTime(), "48vxT2SDEuD" ],
 	]],
 ];
 
