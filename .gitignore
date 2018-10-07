@@ -1,2 +1,5 @@
 build/
 node_modules/
+
+# don't include lock file in library
+package-lock.json
