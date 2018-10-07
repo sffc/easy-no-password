@@ -11,7 +11,7 @@ In addition to the basic API where you can directly generate and check tokens, t
 
 [![Build Status](https://travis-ci.org/sffc/easy-no-password.svg?branch=master)](https://travis-ci.org/sffc/easy-no-password)
 [![Known Vulnerabilities](https://snyk.io/test/github/sffc/easy-no-password/badge.svg)](https://snyk.io/test/github/sffc/easy-no-password)
-[![npm version](http://img.shields.io/npm/v/easy-no-password.svg?style=flat)](https://npmjs.org/package/REPO "View this project on npm")
+[![npm version](http://img.shields.io/npm/v/easy-no-password.svg?style=flat)](https://npmjs.org/package/easy-no-password "View this project on npm")
 
 
 ## Installation
