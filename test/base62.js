@@ -1,6 +1,6 @@
 "use strict";
 
-/* global describe, it */
+/* eslint-env mocha */
 
 const assert = require("assert");
 const base62 = require("../lib/base62");
