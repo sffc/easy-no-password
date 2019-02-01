@@ -126,10 +126,10 @@ enp.iterations = 500000;
 Contributions are welcome.  Before submitting a pull request, please check for errors by running the tests and the JavaScript linter.
 
     $ cd /path/to/easy-no-password
-    $ ./node_modules/.bin/mocha
-    $ ./node_modules/.bin/eslint .
+    $ npm run test
+    $ npm run lint
 
-Please also run your changes with an older version of Node.js; this library supports back to Node.js 0.10.  Note that the tests for `enp#_encrypt()` and `enp#_decrypt()` will fail in 0.10, where hashing is performed using sha1; from 0.12 forward, the more secure sha512 hashing function is used instead.  The tests are written for sha512.
+Please also run your changes with an older version of Node.js; this library supports back to Node.js version 4.  The Travis build will fail if you write code incompatible with Node.js version 4.
 
 ## MIT License
 
