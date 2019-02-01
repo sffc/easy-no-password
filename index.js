@@ -1,5 +1,3 @@
-require("babel-polyfill");
-
 var EasyNoPassword = require("./build/token_handler");
 var EasyStrategy = require("./build/strategy");
 
