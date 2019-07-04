@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "./node_modules/.bin/mocha test"
+    "test": "./node_modules/.bin/mocha test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "password",
@@ -23,13 +25,15 @@
   "dependencies": {
     "async": "^2.0.1",
     "cuint": "^0.2.1",
-    "passport-strategy": "^1.0.0"
+    "passport-strategy": "^1.0.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
     "mocha": "^5.2.0"
   },
   "engines": {
-    "node" : ">=4"
-  }
+    "node": ">=4"
+  },
+  "snyk": true
 }
