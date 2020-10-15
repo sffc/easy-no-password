@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "./node_modules/.bin/mocha test"
+    "test": "mocha --watch test "
   },
   "keywords": [
     "password",
@@ -30,6 +30,6 @@
     "mocha": "^5.2.0"
   },
   "engines": {
-    "node" : ">=4"
+    "node": ">=4"
   }
 }
