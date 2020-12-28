@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
-        node-version: 6.x
+        node-version: 4.x
     - name: Upgrade npm
       run: npm install -g npm@5.7.1
     - name: Install
