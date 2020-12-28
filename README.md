@@ -9,7 +9,7 @@ This library is unique because it uses cryptography techniques to generate times
 
 In addition to the basic API where you can directly generate and check tokens, there is also a [Passport Strategy](http://passportjs.org) API available for easy integration with other forms of authentication.
 
-[![Build Status](https://travis-ci.org/sffc/easy-no-password.svg?branch=master)](https://travis-ci.org/sffc/easy-no-password)
+[![Node.js CI](https://github.com/sffc/easy-no-password/workflows/Node.js%20CI/badge.svg)](https://github.com/sffc/easy-no-password/actions)
 [![Known Vulnerabilities](https://snyk.io/test/github/sffc/easy-no-password/badge.svg)](https://snyk.io/test/github/sffc/easy-no-password)
 [![npm version](http://img.shields.io/npm/v/easy-no-password.svg?style=flat)](https://npmjs.org/package/easy-no-password "View this project on npm")
 

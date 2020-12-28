@@ -1,0 +1,22 @@
+name: Node.js CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 4.x
+    - name: Upgrade npm
+      run: npm install -g npm@5.7.1
+    - name: Install
+      run: npm ci
+    - name: Test
+      run: npm test
+      env:
+        CI: true
+    - name: Lint
+      run: npm run lint
