@@ -10,6 +10,8 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 6.x
+    - name: Upgrade npm
+      run: npm install -g npm@5.7.1
     - name: Install
       run: npm ci
     - name: Test
