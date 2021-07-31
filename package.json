@@ -1,6 +1,6 @@
 {
   "name": "easy-no-password",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Generates secure, timestamped tokens for passwordless authentication without a database backend.",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   "license": "MIT",
   "repository": "sffc/easy-no-password",
   "dependencies": {
-    "async": "^2.0.1",
+    "async": "^2.6.3",
     "cuint": "^0.2.1",
     "passport-strategy": "^1.0.0"
   },
