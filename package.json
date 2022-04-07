@@ -21,7 +21,7 @@
   "license": "MIT",
   "repository": "sffc/easy-no-password",
   "dependencies": {
-    "async": "^2.6.3",
+    "async": "^3.2.2",
     "cuint": "^0.2.1",
     "passport-strategy": "^1.0.0"
   },
