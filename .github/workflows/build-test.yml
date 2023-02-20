@@ -5,13 +5,15 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [4.x, 16.x, 18.x]
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
       with:
-        node-version: 4.x
-    - name: Upgrade npm
-      run: npm install -g npm@5.7.1
+        node-version: ${{ matrix.node-version }}
     - name: Install
       run: npm ci
     - name: Test
