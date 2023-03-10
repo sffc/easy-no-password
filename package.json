@@ -22,7 +22,7 @@
   "repository": "sffc/easy-no-password",
   "dependencies": {
     "async": "^2.6.4",
-    "cuint": "^0.2.1",
+    "egoroof-blowfish": "^2.2.2",
     "passport-strategy": "^1.0.0"
   },
   "devDependencies": {

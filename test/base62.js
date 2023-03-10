@@ -25,7 +25,7 @@ const TEST_CASES = [
 describe("base62.js", () => {
 	describe("#base62.encode()", () => {
 		for (let test of TEST_CASES) {
-			let buf = test[0];
+			let buf = new Uint8Array(test[0]);
 			let str = test[1];
 			it(`should return '${str}' upon evaluating buffer '${buf.toString("hex")}'`, () => {
 				assert.equal(str, base62.encode(buf));
@@ -38,7 +38,7 @@ describe("base62.js", () => {
 			let buf = test[0];
 			let str = test[1];
 			it(`should return '${buf.toString("hex")}' upon evaluating string '${str}'`, () => {
-				assert.equal(buf.toString("hex"), base62.decode(str).toString("hex"));
+				assert.equal(buf.toString("hex"), Buffer.from(base62.decode(str)).toString("hex"));
 			});
 		}
 		it("should throw an exception for invalid entries", () => {
@@ -61,8 +61,8 @@ describe("base62.js", () => {
 		it("should produce correct round-trip results 1000 times in a row", () => {
 			for (let i = 0; i < 1000; i++) {
 				let buf = crypto.randomBytes(8);
-				let str = base62.encode(buf);
-				let decoded = base62.decode(str);
+				let str = base62.encode(new Uint8Array(buf));
+				let decoded = new Buffer(base62.decode(str));
 				assert.equal(buf.toString("hex"), decoded.toString("hex"), `iteration ${i+1}: '${buf.toString("hex")}' != '${decoded.toString("hex")}' (intermediate: '${str}')`);
 			}
 		});
